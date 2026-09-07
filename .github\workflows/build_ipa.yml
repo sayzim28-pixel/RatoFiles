@@ -1,1 +1,39 @@
+name: Build Rato Files IPA
 
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Archive without signing
+        run: |
+          PROJECT_PATH="$(find . -type d -name 'RatoFiles.xcodeproj' -print -quit)"
+          test -n "$PROJECT_PATH"
+          xcodebuild archive \
+            -project "$PROJECT_PATH" \
+            -scheme RatoFiles \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -archivePath "$PWD/archives/RatoFiles.xcarchive" \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY=""
+
+      - name: Package unsigned IPA
+        run: |
+          mkdir -p build/Payload
+          cp -R archives/RatoFiles.xcarchive/Products/Applications/RatoFiles.app build/Payload/
+          cd build
+          zip -qry RatoFiles-unsigned.ipa Payload
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: RatoFiles-unsigned-IPA
+          path: build/RatoFiles-unsigned.ipa
