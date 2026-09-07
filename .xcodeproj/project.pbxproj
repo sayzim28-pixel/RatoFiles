@@ -1,0 +1,174 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1000000328C1000100000001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000000228C1000100000001 /* AppDelegate.swift */; };
+		1000000528C1000100000001 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1000000428C1000100000001 /* MainViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1000000128C1000100000001 /* RatoFiles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RatoFiles.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1000000228C1000100000001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatoFiles/AppDelegate.swift; sourceTree = "<group>"; };
+		1000000428C1000100000001 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatoFiles/MainViewController.swift; sourceTree = "<group>"; };
+		1000000728C1000100000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RatoFiles/Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1000000028C1000100000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1000000628C1000100000001 = {
+			isa = PBXGroup;
+			children = (
+				1000000228C1000100000001 /* AppDelegate.swift */,
+				1000000428C1000100000001 /* MainViewController.swift */,
+				1000000728C1000100000001 /* Info.plist */,
+				1000000128C1000100000001 /* RatoFiles.app */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1000000928C1000100000001 /* RatoFiles */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1000000D28C1000100000001 /* Build configuration list for PBXNativeTarget "RatoFiles" */;
+			buildPhases = (
+				1000000828C1000100000001 /* Sources */,
+				1000000028C1000100000001 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RatoFiles;
+			productName = RatoFiles;
+			productReference = 1000000128C1000100000001 /* RatoFiles.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1000000A28C1000100000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = 1000000B28C1000100000001 /* Build configuration list for PBXProject "RatoFiles" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1000000628C1000100000001;
+			productRefGroup = 1000000628C1000100000001;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1000000928C1000100000001 /* RatoFiles */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1000000828C1000100000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1000000328C1000100000001 /* AppDelegate.swift in Sources */,
+				1000000528C1000100000001 /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1000000C28C1000100000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = RatoFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rato.RatoFiles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = "5.0";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1000000E28C1000100000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = RatoFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rato.RatoFiles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = "5.0";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1000000B28C1000100000001 /* Build configuration list for PBXProject "RatoFiles" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1000000C28C1000100000001 /* Debug */,
+				1000000E28C1000100000001 /* Release */,
+			);
+			default_configuration_is_visible = 0;
+			default_configuration_name = Release;
+		};
+		1000000D28C1000100000001 /* Build configuration list for PBXNativeTarget "RatoFiles" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1000000C28C1000100000001 /* Debug */,
+				1000000E28C1000100000001 /* Release */,
+			);
+			default_configuration_is_visible = 0;
+			default_configuration_name = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1000000A28C1000100000001;
+}
