@@ -14,35 +14,26 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v4
 
-    - name: Select Xcode
-      run: sudo xcode-select -s /Applications/Xcode.app
-
-    - name: Build iOS App (.app)
+    - name: Compile and Package iOS App
       run: |
-        xcodebuild -project RatoFiles.xcodeproj \
-                   -scheme RatoFiles \
-                   -sdk iphoneos \
-                   -configuration Release \
-                   -derivedDataPath build \
-                   CODE_SIGN_IDENTITY="" \
-                   CODE_SIGNING_REQUIRED=NO \
-                   CODE_SIGNING_ALLOWED=NO \
-                   build
+        echo "Criando estrutura do App..."
+        mkdir -p Payload/RatoFiles.app
 
-    - name: Create Payload and IPA
-      run: |
-        mkdir -p Payload
-        APP_PATH=$(find build -name "RatoFiles.app" -type d | head -n 1)
-        
-        if [ -n "$APP_PATH" ]; then
-          echo "App encontrado em: $APP_PATH"
-          cp -r "$APP_PATH" Payload/
-          zip -r RatoFiles.ipa Payload/
-          echo "IPA gerado com sucesso!"
-        else
-          echo "Erro: RatoFiles.app não encontrado."
-          exit 1
-        fi
+        echo "Compilando arquivos Swift para iOS..."
+        xcrun swiftc -sdk $(xcrun --sdk iphoneos --show-sdk-path) \
+                     -target arm64-apple-ios15.0 \
+                     -parse-as-library \
+                     RatoFiles/AppDelegate.swift \
+                     RatoFiles/MainViewController.swift \
+                     -o Payload/RatoFiles.app/RatoFiles
+
+        echo "Copiando Info.plist..."
+        cp RatoFiles/Info.plist Payload/RatoFiles.app/Info.plist
+
+        echo "Compactando em IPA..."
+        zip -r RatoFiles.ipa Payload
+
+        echo "IPA gerado com sucesso!"
 
     - name: Upload IPA Artifact
       uses: actions/upload-artifact@v4
